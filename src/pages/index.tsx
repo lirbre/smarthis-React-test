@@ -6,7 +6,7 @@ import { Meta } from '@/layouts'
 import { Main } from '@/templates'
 
 const Index = (props: any) => {
-  const { data, status } = useSession()
+  const { data } = useSession()
   const [preventHydration, setPreventHydration] = useState<boolean>(false)
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const Index = (props: any) => {
             />
           }
         >
-          {!status ? <WithoutUser /> : <WithUser />}
+          {!data ? <WithoutUser /> : <WithUser />}
         </Main>
       )}
     </>
