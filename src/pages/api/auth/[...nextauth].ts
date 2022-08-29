@@ -16,13 +16,13 @@ export default NextAuth({
     async session({ session, token }) {
       const modifySession = JSON.parse(JSON.stringify(session))
 
-      modifySession.user!.username = session
+      modifySession.user.username = session
         .user!.name!.split(' ')
         .join('')
         .toLocaleLowerCase()
       modifySession.user.uid = token.sub
 
-      return session
+      return modifySession
     }
   },
   secret: 'smarthis-job-react-test'
