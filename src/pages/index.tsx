@@ -33,7 +33,7 @@ const Index = (props: any) => {
             />
           }
         >
-          {status ? <WithoutUser /> : <WithUser />}
+          {!status ? <WithoutUser /> : <WithUser />}
         </Main>
       )}
     </>
