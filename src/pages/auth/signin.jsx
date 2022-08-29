@@ -10,6 +10,7 @@ import { useEffect } from "react";
 export default function SignIn({ providers }) {
   const { data } = useSession()
   const router = useRouter()
+  const callbackUrl = router.query
 
   useEffect(() => {
     if (data) {
