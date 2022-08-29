@@ -11,7 +11,7 @@ export const WithoutUser = () => {
               WE BUILD SMARTHIS REACT CHALLENGE
             </h4>
             <p className="mr-auto max-w-[500px] text-left font-normal text-[#000]">
-              Parece que você ainda não realizou Login, por favor faça o Login.
+              Você ainda não realizou Login, por favor faça o Login.
             </p>
             <button
               className="mr-auto border-4 border-black bg-[#fff] px-8 py-4 shadow-[8px_8px_0_#000] transition duration-200 ease-in hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[12px_12px_0_#000] md:px-12 md:py-6"
