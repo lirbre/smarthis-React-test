@@ -4,12 +4,16 @@ import { useEffect } from 'react'
 import { Meta } from '@/layouts'
 import { Main } from '@/templates'
 
-const Index = () => {
+const Index = (props: any) => {
   const { data, status } = useSession()
 
   useEffect(() => {
     console.log('user data -> ', data)
   }, [data])
+
+  useEffect(() => {
+    console.log('my props', props)
+  }, [props])
 
   return (
     <Main

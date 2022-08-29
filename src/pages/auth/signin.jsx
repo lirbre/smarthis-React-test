@@ -34,7 +34,7 @@ export default function SignIn({ providers }) {
                 Clique para prosseguir com o Login.
               </p>
               <button
-                onClick={() => signIn(provider.id)}
+                onClick={() => signIn(provider.id, { callbackUrl: '/' })}
                 className="mr-auto bg-[#fff] border-4 border-black md:px-12 px-8 md:py-6 py-4 shadow-[8px_8px_0_#000] hover:shadow-[12px_12px_0_#000] hover:-translate-y-1 hover:-translate-x-1 transition ease-in duration-200"
               >
                 <small className="text-[#000] font-black">SIGN IN</small>

@@ -40,6 +40,11 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/pages/auth/signin.jsx"
+    "src/pages/auth/signin.jsx",
+    "src/components/Tweet.jsx",
+    "src/pages/api/search.jsx",
+    "src/pages/api/tweets.jsx",
+    "src/pages/api/auth/[...nextauth].ts",
+    "src/hooks/useTweets.ts"
   ]
 }

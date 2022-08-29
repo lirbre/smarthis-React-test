@@ -12,5 +12,18 @@ export default NextAuth({
   pages: {
     signIn: '/auth/signin'
   },
+  callbacks: {
+    async session({ session, token }) {
+      const modifySession = JSON.parse(JSON.stringify(session))
+
+      modifySession.user!.username = session
+        .user!.name!.split(' ')
+        .join('')
+        .toLocaleLowerCase()
+      modifySession.user.uid = token.sub
+
+      return session
+    }
+  },
   secret: 'smarthis-job-react-test'
 })
