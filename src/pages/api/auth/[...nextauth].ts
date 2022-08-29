@@ -14,6 +14,7 @@ export default NextAuth({
   },
   callbacks: {
     async session({ session, token }) {
+      // deep cloning to prevent errors
       const modifySession = JSON.parse(JSON.stringify(session))
 
       modifySession.user.username = session
