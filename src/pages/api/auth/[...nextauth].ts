@@ -12,5 +12,5 @@ export default NextAuth({
   pages: {
     signIn: '/auth/signin'
   },
-  secret: "smarthis-job-react-test"
+  secret: 'smarthis-job-react-test'
 })
