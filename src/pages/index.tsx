@@ -2,7 +2,6 @@ import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 
 import { WithoutUser, WithUser } from '@/components'
-import { Timeline } from '@/components/Timeline'
 import { Meta } from '@/layouts'
 import { Main } from '@/templates'
 
@@ -45,7 +44,6 @@ const Index = (props: any) => {
               ) : (
                 <WithUser />
               )}
-              <Timeline />
             </div>
           </div>
         </Main>

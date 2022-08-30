@@ -14,9 +14,19 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
   }
 
+  const params = new URLSearchParams({
+    expansions:
+      'author_id,attachments.media_keys,referenced_tweets.id,referenced_tweets.id.author_id',
+    'tweet.fields':
+      'attachments,author_id,public_metrics,created_at,id,in_reply_to_user_id,referenced_tweets,text',
+    'user.fields': 'id,name,profile_image_url,protected,url,username,verified',
+    'media.fields':
+      'duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics'
+  })
+
   const { data } = await axios
     .get(
-      `https://api.twitter.com/2/users/${id}/tweets?tweet.fields=attachments,author_id,created_at,id,public_metrics,referenced_tweets&expansions=attachments.media_keys,author_id&max_results=1`,
+      `https://api.twitter.com/2/users/${id}/tweets?${params}&max_results=100`,
       options
     )
     .then((r) => {

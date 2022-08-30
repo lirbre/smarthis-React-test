@@ -3,14 +3,12 @@
 // because next-auth doesnt have typings
 
 import { getProviders, signIn, useSession } from "next-auth/react";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 export default function SignIn({ providers }) {
   const { data } = useSession();
   const router = useRouter();
-  const callbackUrl = router.query;
 
   useEffect(() => {
     if (data) {
