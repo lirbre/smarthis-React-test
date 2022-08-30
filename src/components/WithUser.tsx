@@ -3,7 +3,7 @@ import { Timeline } from './Timeline'
 export const WithUser = () => {
   return (
     <div className="mx-auto flex w-full flex-col items-center justify-center gap-16">
-      <div className="flex w-full items-center justify-center">
+      <div className="flex w-full flex-col items-center justify-center lg:flex-row">
         <div className="my-auto flex h-full max-w-[670px] flex-col items-center justify-center gap-12 pb-4 xl:pb-40">
           <h4 className="font-black text-[#000]">
             WE BUILD SMARTHIS REACT CHALLENGE

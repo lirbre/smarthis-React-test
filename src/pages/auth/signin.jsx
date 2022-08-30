@@ -20,7 +20,7 @@ export default function SignIn({ providers }) {
     <>
       {Object.values(providers).map((provider) => (
         <div
-          className="bg-[#01ffa9] min-h-[calc(100vh-50px)] h-full flex items-center justify-center xl:pt-32 pt-8 px-4"
+          className="bg-[#01ffa9] min-h-[calc(100vh-50px)] h-full flex items-center justify-center pt-32 px-4"
           key={provider.name}
         >
           <div

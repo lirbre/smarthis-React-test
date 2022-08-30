@@ -34,7 +34,7 @@ const Index = (props: any) => {
             />
           }
         >
-          <div className="flex min-h-[calc(100vh-50px)] items-center justify-center bg-[#01ffa9] px-4 pt-8 xl:pt-32">
+          <div className="flex min-h-[calc(100vh-50px)] flex-col items-center justify-center bg-[#01ffa9] px-4 pt-32">
             <div
               className="flex min-h-[calc(100vh-200px)] w-full max-w-[1324px] flex-col items-center justify-between lg:flex-row xl:items-start"
               style={{ animation: 'entrance 3s linear 1s 1 normal both' }}
