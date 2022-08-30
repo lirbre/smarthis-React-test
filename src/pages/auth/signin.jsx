@@ -8,15 +8,15 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 export default function SignIn({ providers }) {
-  const { data } = useSession()
-  const router = useRouter()
-  const callbackUrl = router.query
+  const { data } = useSession();
+  const router = useRouter();
+  const callbackUrl = router.query;
 
   useEffect(() => {
     if (data) {
-      router.push('/')
+      router.push("/");
     }
-  }, [data])
+  }, [data]);
 
   return (
     <>
@@ -25,7 +25,10 @@ export default function SignIn({ providers }) {
           className="bg-[#01ffa9] h-full flex items-center justify-center xl:pt-32 pt-8 px-4"
           key={provider.name}
         >
-          <div className="w-full max-w-[1324px] xl:items-start items-center justify-between flex lg:flex-row flex-col min-h-full">
+          <div
+            className="w-full max-w-[1324px] xl:items-start items-center justify-between flex lg:flex-row flex-col min-h-full"
+            style={{ animation: "entrance 3s" }}
+          >
             <div className="max-w-[670px] h-full my-auto flex flex-col items-center justify-center gap-12 xl:pb-40 pb-4">
               <h4 className="text-[#000] font-black">
                 WE BUILD SMARTHIS REACT CHALLENGE
@@ -34,18 +37,17 @@ export default function SignIn({ providers }) {
                 Clique para prosseguir com o Login.
               </p>
               <button
-                onClick={() => signIn(provider.id, { callbackUrl: '/' })}
+                onClick={() => signIn(provider.id, { callbackUrl: "/" })}
                 className="mr-auto bg-[#fff] border-4 border-black md:px-12 px-8 md:py-6 py-4 shadow-[8px_8px_0_#000] hover:shadow-[12px_12px_0_#000] hover:-translate-y-1 hover:-translate-x-1 transition ease-in duration-200"
               >
                 <small className="text-[#000] font-black">SIGN IN</small>
               </button>
             </div>
-            <Image
-              src={"/images/login.svg"}
-              width={654}
-              height={573}
-              alt="a interactive dashboard image"
-            />
+            <object
+              type="image/svg+xml"
+              data="https://smarthis.com.br/wp-content/themes/smarthis/public/assets/illustrations/rpa-home.svg"
+              className="w-11/12 max-w-[638px] pb-12 mt-6"
+            ></object>
           </div>
         </div>
       ))}

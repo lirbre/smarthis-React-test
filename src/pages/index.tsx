@@ -33,7 +33,14 @@ const Index = (props: any) => {
             />
           }
         >
-          {!data ? <WithoutUser /> : <WithUser />}
+          <div className="flex h-full items-center justify-center bg-[#01ffa9] px-4 pt-8 xl:pt-32">
+            <div
+              className="flex min-h-full w-full max-w-[1324px] flex-col items-center justify-between lg:flex-row xl:items-start"
+              style={{ animation: 'entrance 3s' }}
+            >
+              {!data ? <WithoutUser /> : <WithUser />}
+            </div>
+          </div>
         </Main>
       )}
     </>
