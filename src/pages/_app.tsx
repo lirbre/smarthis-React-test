@@ -10,7 +10,7 @@ import { SessionProvider } from 'next-auth/react'
 import { Footer, Navbar } from '@/components'
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <SessionProvider session={pageProps.session} refetchInterval={5 * 60}>
+  <SessionProvider session={pageProps.session} refetchInterval={5 * 6000}>
     <Navbar />
     <div className="min-h-[700px]">
       <Component {...pageProps} />
