@@ -29,6 +29,7 @@ export const Timeline = () => {
   const myData: MySession = data as MySession;
   const [tweetData, setData] = useState<TweetData[]>([]);
   const [shouldShow, setShouldShow] = useState<number>(8);
+  const [isFetching, setIsFetching] = useState<boolean>(true);
 
   useEffect(() => {
     if (!myData) return;
@@ -41,6 +42,7 @@ export const Timeline = () => {
       .then((res) => res.json())
       .then((result) => {
         setData(result.data);
+        setIsFetching(false);
       });
   };
 
@@ -56,21 +58,25 @@ export const Timeline = () => {
 
   return (
     <div className="w-full">
-      <InfiniteScroll
-        dataLength={shouldShow}
-        next={() => setShouldShow((prev) => prev + 10)}
-        hasMore={shouldShow < tweetData.length}
-        loader={
-          <div className="w-full items-center justify-center translate-x-[50%]">
-            <p className="w-full text-center font-bold text-[#000]">
-              Loading your Timeline...
-            </p>
-          </div>
-        }
-        className="grid lg:grid-cols-2 grid-cols-1 grid-flow-row-dense gap-12 justify-center pb-16 px-6 w-full mx-auto"
-      >
-        {memoizedTweets}
-      </InfiniteScroll>
+      {!isFetching && tweetData.length === 0 ? (
+        <div className="w-full items-center justify-center pb-32">
+        <p className="w-full text-center font-bold text-[#000]">
+          Você não tem nenhum tweet disponível.
+        </p>
+      </div>
+      ) : (
+        <InfiniteScroll
+          dataLength={shouldShow}
+          next={() => setShouldShow((prev) => prev + 10)}
+          hasMore={shouldShow < tweetData.length}
+          loader={
+            <></>
+          }
+          className="grid lg:grid-cols-2 grid-cols-1 grid-flow-row-dense gap-12 justify-center pb-16 px-6 w-full mx-auto"
+        >
+          {memoizedTweets}
+        </InfiniteScroll>
+      )}
     </div>
   );
 };
