@@ -72,7 +72,7 @@ export const Timeline = () => {
           loader={
             <></>
           }
-          className="grid lg:grid-cols-2 grid-cols-1 grid-flow-row-dense gap-12 justify-center pb-16 px-6 w-full mx-auto"
+          className="grid lg:grid-cols-2 grid-cols-1 grid-flow-row-dense gap-12 justify-center pb-16 md:px-6 w-full mx-auto"
         >
           {memoizedTweets}
         </InfiniteScroll>
