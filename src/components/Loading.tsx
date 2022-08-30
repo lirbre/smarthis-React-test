@@ -6,7 +6,7 @@ interface Props {
 
 const Loading = ({ msg = 'Loading...' }: Props) => {
   return (
-    <div className="flex w-full flex-col items-center justify-center pb-12">
+    <div className="flex aspect-square w-full flex-col items-center justify-center rounded-lg bg-[#fff] p-4 shadow-sm">
       <svg
         className="mt-3"
         xmlns="http://www.w3.org/2000/svg"
