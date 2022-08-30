@@ -3,6 +3,7 @@ import { MySession } from "@/typings/session";
 import { useSession } from "next-auth/react";
 import { useEffect, useMemo, useState } from "react";
 import { CustomEmbed } from "./CustomEmbed";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 interface TweetData {
   created_at: string;
@@ -26,8 +27,8 @@ interface TweetData {
 export const Timeline = () => {
   const { data } = useSession();
   const myData: MySession = data as MySession;
-
   const [tweetData, setData] = useState<TweetData[]>([]);
+  const [shouldShow, setShouldShow] = useState<number>(8);
 
   useEffect(() => {
     if (!myData) return;
@@ -43,15 +44,40 @@ export const Timeline = () => {
       });
   };
 
+  const showCorrectly = useMemo(
+    () => [...tweetData].filter(({}, i: number) => i < shouldShow),
+    [shouldShow, tweetData]
+  );
+
   const memoizedTweets = useMemo(
-    () =>
-      tweetData?.map(({ id }) => <CustomEmbed key={id} id={id} />),
-    [tweetData]
+    () => showCorrectly?.map(({ id }) => <CustomEmbed key={id} id={id} />),
+    [showCorrectly]
   );
 
   return (
-    <>
-      <div className="grid lg:grid-cols-2 grid-cols-1 grid-flow-row-dense gap-12 justify-center pb-16 px-6 w-full mx-auto">{memoizedTweets}</div>
-    </>
-  );  
+    <div className="w-full">
+      <InfiniteScroll
+        dataLength={shouldShow}
+        next={() => setShouldShow((prev) => prev + 10)}
+        hasMore={shouldShow < tweetData.length}
+        loader={
+          <div className="w-full items-center justify-center translate-x-[50%]">
+            <p className="w-full text-center font-bold text-[#000]">
+              Loading your Timeline...
+            </p>
+          </div>
+        }
+        endMessage={
+          <div className="w-full items-center justify-center translate-x-[50%] pt-12">
+            <p className="w-full text-center font-bold text-[#000]">
+              Você viu seus últimos tweets.
+            </p>
+          </div>
+        }
+        className="grid lg:grid-cols-2 grid-cols-1 grid-flow-row-dense gap-12 justify-center pb-16 px-6 w-full mx-auto"
+      >
+        {memoizedTweets}
+      </InfiniteScroll>
+    </div>
+  );
 };
