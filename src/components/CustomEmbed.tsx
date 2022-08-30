@@ -11,7 +11,7 @@ export const CustomEmbed = ({ id }: CustomEmbedProps) => {
   const [isLoading, setLoading] = useState<boolean>(true)
 
   return (
-    <div style={{ animation: 'fade-in .5s' }}>
+    <div className="flex justify-center" style={{ animation: 'fade-in .5s' }}>
       <div style={{ animation: `${!isLoading ? 'fade-in .5s' : ''}` }}>
         <TwitterTweetEmbed onLoad={() => setLoading(false)} tweetId={id} />
       </div>
