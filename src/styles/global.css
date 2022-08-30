@@ -64,3 +64,7 @@ body {
     max-width: clamp(728px, 75vw, calc(1440px - 300px));
   }
 }
+
+.twitter-tweet-rendered {
+  @apply mx-auto
+}
