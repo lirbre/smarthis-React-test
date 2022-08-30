@@ -40,7 +40,7 @@ export const WithUser = () => {
             className="mr-auto border-4 border-black bg-[#fff] px-8 py-4 shadow-[8px_8px_0_#000] transition duration-200 ease-in hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[12px_12px_0_#000] md:px-12 md:py-6"
             onClick={() => getTweets()}
           >
-            <small className="font-black text-[#000]">RELOAD</small>
+            <small className="font-black text-[#000]">REFRESH</small>
           </button>
         </div>
         <object
