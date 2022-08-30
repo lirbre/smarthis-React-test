@@ -57,7 +57,7 @@ export const Timeline = () => {
   );
 
   return (
-    <div className="w-full">
+    <div className="w-full flex items-center justify-center">
       {!isFetching && tweetData.length === 0 ? (
         <div className="w-full items-center justify-center pb-32">
         <p className="w-full text-center font-bold text-[#000]">
