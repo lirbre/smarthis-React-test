@@ -67,13 +67,6 @@ export const Timeline = () => {
             </p>
           </div>
         }
-        endMessage={
-          <div className="w-full items-center justify-center translate-x-[50%] pt-12">
-            <p className="w-full text-center font-bold text-[#000]">
-              Você viu seus últimos tweets.
-            </p>
-          </div>
-        }
         className="grid lg:grid-cols-2 grid-cols-1 grid-flow-row-dense gap-12 justify-center pb-16 px-6 w-full mx-auto"
       >
         {memoizedTweets}
