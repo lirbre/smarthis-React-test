@@ -3,7 +3,7 @@ Guide to Run Locally:
 - Clone and Install with `npm install` or `yarn install`.
   - Use `npm run dev` or `yarn dev` to run it as Dev.
      - You'll need to setup the .env variables since this project uses the Twitter API.
-     - You'll have to setup `NEXT_PUBLIC_TWITTER_CLIENT_ID` and `NEXT_PUBLIC_TWITTER_CLIENT_SECRET` that is responsible for making the OAuth 2.0 working and after that, you'll need to setup NEXT_PUBLIC_TWITTER_BEARER` which is the Bearer Token responsible for making calls with the Twitter API inside the Next API.
+   - You'll have to setup `NEXT_PUBLIC_TWITTER_CLIENT_ID` and `NEXT_PUBLIC_TWITTER_CLIENT_SECRET` that is responsible for making the OAuth 2.0 working and after that, you'll need to setup `NEXT_PUBLIC_TWITTER_BEARER` which is the Bearer Token responsible for making calls with the Twitter API inside the Next API.
      
 - Check out the Live Version - [Smarthis Challenge - Breno Lira](https://smarthis-react-test.vercel.app/)
 
@@ -28,7 +28,6 @@ With/Without User
 - The home itself dinamically changes if the user is Logged or not.
   - It has an simple dinamic UI with a button - if the user has to login - from Smarthis Website and also an animated `object`.
 
-![Home with user](https://user-images.githubusercontent.com/86065449/187444331-02d7dd28-6cb5-480c-af4c-93a43874c4e1.png)
 ![Home without user](https://user-images.githubusercontent.com/86065449/187444338-a6810f84-5e8d-4345-aa3a-8ad066ef44e2.png)
 
 Custom Signin page
@@ -37,6 +36,15 @@ Custom Signin page
   - It has an simple UI with a button from Smarthis Website and also an animated `object`.
 
 ![Custom Sign In page](https://user-images.githubusercontent.com/86065449/187444607-f179d578-bb22-412f-a59f-67fc2d4540d7.png)
+
+Embed Tweets 
+-------------------------------------------------
+- Once the user is Authenticated the Home will display his last 100 tweets. 
+  - It's using `react-embed-twitter` to make an easier but completely functional Twitter implementation.
+  - I'm using a custom embed component so I can add a simple loading state and a Fade Animation using the "onLoad" property from `TwitterTweetEmbed` component.
+  
+![Embed tweets](https://user-images.githubusercontent.com/86065449/187459526-9f3b7029-bfc6-4929-a17a-ca4335681949.png)
+![Loading component](https://user-images.githubusercontent.com/86065449/187460713-9013b202-3654-40a3-8285-cab23160ea70.png)
 
 Navbar
 -------------------------------------------------
