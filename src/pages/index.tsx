@@ -5,17 +5,9 @@ import { WithoutUser, WithUser } from '@/components'
 import { Meta } from '@/layouts'
 import { Main } from '@/templates'
 
-const Index = (props: any) => {
+const Index = () => {
   const { data } = useSession()
   const [preventHydration, setPreventHydration] = useState<boolean>(false)
-
-  useEffect(() => {
-    console.log('user data -> ', data)
-  }, [data])
-
-  useEffect(() => {
-    console.log('my props', props)
-  }, [props])
 
   useEffect(() => {
     // prevent hydration error from Next 12

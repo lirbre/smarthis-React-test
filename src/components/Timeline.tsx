@@ -33,7 +33,6 @@ export const Timeline = () => {
 
   useEffect(() => {
     if (!myData) return;
-    console.log(tweetData);
     getTweets();
   }, [myData]);
 

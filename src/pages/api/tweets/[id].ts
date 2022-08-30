@@ -30,11 +30,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       options
     )
     .then((r) => {
-      console.log('your r -> ', r)
       return r
     })
     .catch((err) => {
-      console.log('something went wrong -> ', err)
       return err
     })
 
