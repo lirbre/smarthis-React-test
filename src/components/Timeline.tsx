@@ -46,7 +46,7 @@ export const Timeline = () => {
   };
 
   const showCorrectly = useMemo(
-    () => [...tweetData].filter(({}, i: number) => i < shouldShow),
+    () => [...tweetData].slice(0, shouldShow),
     [shouldShow, tweetData]
   );
 
