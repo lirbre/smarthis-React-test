@@ -6,7 +6,7 @@ Guide to Run Locally:
    - You'll have to setup `NEXT_PUBLIC_TWITTER_CLIENT_ID` and `NEXT_PUBLIC_TWITTER_CLIENT_SECRET` that is responsible for making the OAuth 2.0 working and after that, you'll need to setup `NEXT_PUBLIC_TWITTER_BEARER` which is the Bearer Token responsible for making calls with the Twitter API inside the Next API.
      
 - Check out the Live Version - [Smarthis Challenge - Breno Lira](https://smarthis-react-test.vercel.app/)
-- You can see it working on [YouTube](https://www.youtube.com/watch?v=0W4bR9tu5T4)
+- You can see it working on [YouTube](https://www.youtube.com/watch?v=KCVCaauo5mQ)
 
 Sumary
 -------------------------------------------------
@@ -43,6 +43,7 @@ Embed Tweets
 - Once the user is Authenticated the Home will display his last 100 tweets. 
   - It's using `react-embed-twitter` to make an easier but completely functional Twitter implementation.
   - I'm using a custom embed component so I can add a simple loading state and a Fade Animation using the "onLoad" property from `TwitterTweetEmbed` component.
+  - I'm using `react-infinite-scroll-component` to make the Timeline updates when the user scrolls down. Preventing issues with Performance since with that the App will not load all embeded tweets in the same time.
   
 ![Embed tweets](https://user-images.githubusercontent.com/86065449/187459526-9f3b7029-bfc6-4929-a17a-ca4335681949.png)
 ![Loading component](https://user-images.githubusercontent.com/86065449/187460713-9013b202-3654-40a3-8285-cab23160ea70.png)
