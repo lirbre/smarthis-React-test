@@ -12,7 +12,9 @@ import { Footer, Navbar } from '@/components'
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <SessionProvider session={pageProps.session} refetchInterval={5 * 60}>
     <Navbar />
-    <Component {...pageProps} />
+    <div className="min-h-[700px]">
+      <Component {...pageProps} />
+    </div>
     <Footer />
   </SessionProvider>
 )

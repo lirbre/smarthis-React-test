@@ -6,12 +6,18 @@ export default NextAuth({
     TwitterProvider({
       clientId: process.env.NEXT_PUBLIC_TWITTER_CLIENT_ID!,
       clientSecret: process.env.NEXT_PUBLIC_TWITTER_CLIENT_SECRET!,
-      version: '2.0'
+      version: '2.0',
+      authorization: {
+        params: {
+          scope: 'tweet.read users.read'
+        }
+      }
     })
   ],
   pages: {
     signIn: '/auth/signin'
   },
+
   callbacks: {
     async session({ session, token }) {
       // deep cloning to prevent errors

@@ -7,7 +7,7 @@ export const Navbar = () => {
   const { data } = useSession()
 
   return (
-    <header className="sticky top-0 z-10 flex h-[85px] w-full items-center justify-center">
+    <header className="absolute top-0 right-0 z-10 flex h-[85px] w-full items-center justify-center bg-[#fff]">
       <div className="flex w-full max-w-[1324px] items-center justify-between px-4">
         <Image
           src={'/logos/smarthis.svg'}

@@ -39,13 +39,22 @@ body {
 @keyframes entrance {
   0% {
     opacity: 0;
-    transform: translateY(12rem);
-    z-index: -1;
+    transform: translateY(4rem);
+    z-index: 0;
   }, 
   100% {
     opacity: 1;
     transform: translateY(0);
-    z-index: 0;
+    z-index: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

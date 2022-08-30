@@ -22,11 +22,11 @@ export default function SignIn({ providers }) {
     <>
       {Object.values(providers).map((provider) => (
         <div
-          className="bg-[#01ffa9] h-full flex items-center justify-center xl:pt-32 pt-8 px-4"
+          className="bg-[#01ffa9] min-h-[calc(100vh-50px)] h-full flex items-center justify-center xl:pt-32 pt-8 px-4"
           key={provider.name}
         >
           <div
-            className="w-full max-w-[1324px] xl:items-start items-center justify-between flex lg:flex-row flex-col min-h-full"
+            className="w-full max-w-[1324px] min-h-[calc(100vh-200px)] xl:items-start items-center justify-between flex lg:flex-row flex-col"
             style={{ animation: "entrance 3s" }}
           >
             <div className="max-w-[670px] h-full my-auto flex flex-col items-center justify-center gap-12 xl:pb-40 pb-4">
