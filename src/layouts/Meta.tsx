@@ -24,16 +24,16 @@ const Meta = (props: IMetaProps) => {
         />
         <link
           rel="apple-touch-icon"
-          href="https://smarthis.com.br/wp-content/uploads/2021/05/favicon.ico"
+          href="https://smarthis.com/wp-content/uploads/2021/05/favicon.ico"
         />
         <link
           rel="icon"
-          href="https://smarthis.com.br/wp-content/uploads/2021/05/favicon.ico"
+          href="https://smarthis.com/wp-content/uploads/2021/05/favicon.ico"
           sizes="192x192"
         />
         <link
           rel="icon"
-          href="https://smarthis.com.br/wp-content/uploads/2021/05/favicon.ico"
+          href="https://smarthis.com/wp-content/uploads/2021/05/favicon.ico"
           sizes="32x32"
         />
       </Head>
