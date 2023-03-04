@@ -45,7 +45,7 @@ export const WithUser = () => {
         </div>
         <object
           type="image/svg+xml"
-          data="https://smarthis.com.br/wp-content/themes/smarthis/public/assets/illustrations/ia.svg"
+          data="https://smarthis.com/wp-content/themes/smarthis/public/assets/illustrations/ia.svg"
           className="mt-6 w-11/12 max-w-[638px] pb-12"
         />
       </div>
